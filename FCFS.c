@@ -21,7 +21,7 @@ void main(){
     p[0].tatime = p[0].btime;
     float awtime = 0.0;
     float awtatime = 0.0;
-    for(int i=1;i<n;i++){
+    for(int i=1;i!=n;i++){
         p[i].wtime = p[i-1].wtime + p[i-1].btime;
         p[i].tatime = p[i].wtime + p[i].btime;
     }

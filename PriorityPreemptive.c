@@ -5,6 +5,7 @@ struct process{
     int btime;
     int wtime;
     int tatime;
+    int priority;
     int atime;
     int ctime;
     int rtime;
@@ -21,6 +22,8 @@ void main(){
         scanf("%d",&p[i].btime);
         printf("Enter arrival time for the process P%d: ",i);
         scanf("%d",&p[i].atime);
+        printf("Enter priorty for the process P%d: ",i);
+        scanf("%d",&p[i].priority);
         p[i].rtime = p[i].btime;
         p[i].ctime = p[i].tatime = p[i].wtime = 0;
     }
@@ -28,12 +31,14 @@ void main(){
     float awtime = 0.0;
     float awtatime = 0.0; 
     while(completed!=n){
-        int min_rtime = 100000;
+        int highest_priority = 1000000;
         int idx = -1;
         for(int i=0;i<n;i++){
-            if(p[i].atime<=t&&p[i].rtime>0&&p[i].rtime<min_rtime){
-                min_rtime = p[i].rtime;
-                idx = i;
+            if(p[i].atime<=t&&p[i].rtime>0){
+                if(p[i].priority<highest_priority){
+                    highest_priority=p[i].priority;
+                    idx =i;
+                }
             }
         }
             if(idx == -1){
