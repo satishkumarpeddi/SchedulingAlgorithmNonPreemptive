@@ -27,7 +27,7 @@ void main(){
     }
     printf("\nProcess\tBurst Time\tTurn Around Time\tWaiting Time\n");
     for(int i=0;i<n;i++){
-        printf("P%d\t%d\t\t%d\t\t%d\t\n",p[i].pid,p[i].btime,p[i].tatime,p[i].wtime);
+        printf("P%d\t%d\t\t%d\t\t\t%d\t\n",p[i].pid,p[i].btime,p[i].tatime,p[i].wtime);
         awtime +=  p[i].wtime;
         awtatime += p[i].tatime;
     }
