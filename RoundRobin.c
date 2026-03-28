@@ -36,7 +36,7 @@ void main(){
             if(p[i].atime<=t&&p[i].rtime>0){
                 done = 0;
                 printf("P%d ",p[i].pid);
-                if(p[i].rtime >> tq){
+                if(p[i].rtime > tq){
                     t+=tq;
                     p[i].rtime -=tq;
                 }else{
