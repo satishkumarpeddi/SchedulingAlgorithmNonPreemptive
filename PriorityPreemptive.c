@@ -31,12 +31,13 @@ void main(){
         int highest_priority = 100000;
         int idx = -1;
         for(int i=0;i<n;i++){
-            if(p[i].atime<=t&&p[i].rtime>0){
-                    if(p[i].priority<highest_priority){
-                    highest_priority = p[i].priority;
-                    idx = i;
-                }
+            if(p[i].atime <= t && p[i].rtime > 0){
+                        if(p[i].priority < highest_priority || 
+                       (p[i].priority == highest_priority && p[i].atime < p[idx].atime)){
+                        highest_priority = p[i].priority;
+                        idx = i;
             }
+        }
         }
         if(idx==-1){
             t++;
